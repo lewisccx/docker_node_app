@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  node_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: 
+        NODE_ENV: production
+    container_name: node_app_prod
+    env_file:
+      - ./env/.prod.env
+    command: node index.js
+    ports:
+      - 3000:3000
+
+# docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# docker-compose -f docker-compose.yml -f docker-compose.prod.yml down -v
+# docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build

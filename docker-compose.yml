@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  node_app:
+    build: 
+      context: .
+      args: 
+        NODE_ENV: development
+
+# docker-compose up -d
+# docker-compose down
+# docker-compose up -d --build
